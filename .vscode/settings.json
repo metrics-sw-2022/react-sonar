@@ -1,0 +1,6 @@
+{
+  "sonarlint.connectedMode.project": {
+    "connectionId": "metrics-sw-2022",
+    "projectKey": "metrics-sw-2022_react-sonar"
+  }
+}
