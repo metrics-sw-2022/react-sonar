@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const animals = ['dog', 'cat', 'rooster', 'hoorse'];
+  const [animal, setAnimal] = useState(null);
+
+  function emitSound(pet) {
+    switch (pet) {
+      case 'dog':
+        console.log('Gua');
+        break;
+      case 'cat':
+        console.log('Miau');
+        break;
+      case 'rooster':
+        console.log('Kikiriki');
+        break;
+      default:
+        console.log('default sound');
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <p>Select an animal:</p>
       </header>
+      <main>
+        <section className='main-container'>
+          <ol className='list'>
+            {animals.map((animal, index) => (
+              <li key={index} onClick={() => emitSound(animal)}>
+                {animal}
+              </li>
+            ))}
+          </ol>
+          {animal && <p>Animal selected: {animal}</p>}
+        </section>
+      </main>
     </div>
   );
 }
