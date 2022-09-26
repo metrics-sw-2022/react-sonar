@@ -21,6 +21,22 @@ function App() {
     }
   }
 
+  function emitAnimalSound(pet) {
+    switch (pet) {
+      case 'dog':
+        console.log('Gua');
+        break;
+      case 'cat':
+        console.log('Miau');
+        break;
+      case 'rooster':
+        console.log('Kikiriki');
+        break;
+      default:
+        console.log('default sound');
+    }
+  }
+
   return (
     <div className='App'>
       <header className='App-header'>
