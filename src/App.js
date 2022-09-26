@@ -6,6 +6,7 @@ function App() {
   const [animal, setAnimal] = useState(null);
 
   function emitSound(pet) {
+    setAnimal(pet);
     switch (pet) {
       case 'dog':
         console.log('Gua');
